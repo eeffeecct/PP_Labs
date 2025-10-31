@@ -1,5 +1,4 @@
 from dataclasses import dataclass, field
-from typing import List, Dict, Optional
 from datetime import datetime
 from .customer import Customer
 from .product import Product
@@ -20,7 +19,7 @@ class OrderItem:
     def total_price(self) -> float:
         return self.unit_price * self.quantity
 
-    def to_dict(self) -> Dict:
+    def to_dict(self) -> dict:
         return {
             "product_id": self.product.product_id,
             "product_name": self.product.name,
@@ -34,7 +33,7 @@ class OrderItem:
 class Order:
     order_id: str
     customer: Customer
-    items: List[OrderItem] = field(default_factory=list)
+    items: list = field(default_factory=list)
     order_date: datetime = field(default_factory=datetime.now, init=False)
     status: str = "pending"
 
@@ -49,7 +48,7 @@ class Order:
     def add_item(self, product: Product, quantity: int) -> None:
         self.items.append(OrderItem(product, quantity))
 
-    def to_dict(self) -> Dict:
+    def to_dict(self) -> dict:
         return {
             "order_id": self.order_id,
             "customer_id": self.customer.customer_id,

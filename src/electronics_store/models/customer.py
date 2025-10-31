@@ -1,27 +1,24 @@
 from dataclasses import dataclass, field
-from typing import Optional, Dict
 from datetime import datetime
 
 
 @dataclass
 class Customer:
-    """Class for representing a store customer"""
     customer_id: int
     name: str
     email: str
-    phone: Optional[str] = None
-    address: Optional[str] = None
+    phone: str = None
+    address: str = None
     registration_date: datetime = field(default_factory=datetime.now, init=False)
 
     def __post_init__(self):
-        if not self.name or not self.name.strip():
+        if not self.name.strip():
             raise ValueError("Customer name cannot be empty")
         if "@" not in self.email:
             raise ValueError("Invalid email format")
-
         self.name = self.name.strip()
 
-    def to_dict(self) -> Dict:
+    def to_dict(self) -> dict:
         return {
             "customer_id": self.customer_id,
             "name": self.name,
@@ -32,7 +29,7 @@ class Customer:
         }
 
     @classmethod
-    def from_dict(cls, data: Dict) -> 'Customer':
+    def from_dict(cls, data: dict) -> 'Customer':
         return cls(
             customer_id=data["customer_id"],
             name=data["name"],

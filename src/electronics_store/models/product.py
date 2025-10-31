@@ -1,5 +1,4 @@
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, ClassVar
 from datetime import datetime
 from abc import ABC
 
@@ -16,32 +15,27 @@ class Product(ABC):
     created_at: datetime = field(default_factory=datetime.now, init=False)
 
     def __post_init__(self):
-        if not self.name or not self.name.strip():
+        if not self.name.strip():
             raise ValueError("Product name can't be empty")
         if self.price < 0:
             raise ValueError("Price can't be negative")
         if self.stock < 0:
             raise ValueError("Stock can't be negative")
-
         self.name = self.name.strip()
 
-
     def increase_stock(self, quantity: int) -> None:
-        """Increase the quantity of goods in stock"""
         if quantity <= 0:
             raise ValueError("Quantity must be positive")
         self.stock += quantity
 
     def decrease_stock(self, quantity: int) -> None:
-        """Decrease the quantity of goods in stock"""
-        if quantity > self.stock:
-            raise ValueError("Inadequate stock")
         if quantity <= 0:
             raise ValueError("Quantity must be positive")
+        if quantity > self.stock:
+            raise ValueError("Inadequate stock")
         self.stock -= quantity
 
-    def to_dict(self) -> Dict:  # Serialization
-        """Convert an object to a dictionary"""
+    def to_dict(self) -> dict:
         return {
             "product_id": self.product_id,
             "name": self.name,
@@ -56,7 +50,7 @@ class Product(ABC):
 @dataclass
 class ElectronicProduct(Product):
     warranty_months: int = 12
-    specifications: Dict[str, str] = field(default_factory=dict)
+    specifications: dict = field(default_factory=dict)
 
     def __post_init__(self):
         super().__post_init__()
@@ -68,33 +62,29 @@ class ElectronicProduct(Product):
     def add_specification(self, key: str, value: str) -> None:
         self.specifications[key] = value
 
-    def to_dict(self) -> Dict:
-        data = super().to_dict()
-        data.update({
+    def to_dict(self) -> dict:
+        return {**super().to_dict(), **{
             "brand": self.brand,
             "warranty_months": self.warranty_months,
             "specifications": self.specifications
-        })
-        return data
+        }}
 
 
 @dataclass
 class Smartphone(ElectronicProduct):
     storage: str = "128GB"
     screen_size: float = 6.1
-    os: Optional[str] = None
+    os: str = None
 
-    def to_dict(self) -> Dict:
-        data = super().to_dict()
-        data.update({
+    def to_dict(self) -> dict:
+        return {**super().to_dict(), **{
             "storage": self.storage,
             "screen_size": self.screen_size,
             "os": self.os
-        })
-        return data
+        }}
 
     @classmethod
-    def from_dict(cls, data: Dict) -> 'Smartphone': # Fabric method
+    def from_dict(cls, data: dict) -> 'Smartphone':
         return cls(
             product_id=data["product_id"],
             name=data["name"],
@@ -114,19 +104,17 @@ class Smartphone(ElectronicProduct):
 class Laptop(ElectronicProduct):
     processor: str = "Intel i5"
     ram: str = "16GB"
-    storage_type: Optional[str] = None
+    storage_type: str = None
 
-    def to_dict(self) -> Dict:
-        data = super().to_dict()
-        data.update({
+    def to_dict(self) -> dict:
+        return {**super().to_dict(), **{
             "processor": self.processor,
             "ram": self.ram,
             "storage_type": self.storage_type
-        })
-        return data
+        }}
 
     @classmethod
-    def from_dict(cls, data: Dict) -> 'Laptop':
+    def from_dict(cls, data: dict) -> 'Laptop':
         return cls(
             product_id=data["product_id"],
             name=data["name"],
