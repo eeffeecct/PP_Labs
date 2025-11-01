@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "product_id": 0,
+      "name": "Iphone",
+      "price": 999.0,
+      "stock": 40,
+      "description": "",
+      "created_at": "2025-11-01T19:37:02.127328",
+      "type": "Smartphone",
+      "brand": "Apple",
+      "warranty_months": 12,
+      "specifications": {},
+      "storage": "128",
+      "screen_size": 6.1,
+      "os": "IOS"
+    }
+  ],
+  "customers": [],
+  "orders": [],
+  "metadata": {
+    "export_date": "2025-11-01T19:37:29.267545",
+    "total_products": 1,
+    "total_customers": 0,
+    "next_product_id": 1,
+    "next_customer_id": 1
+  }
+}

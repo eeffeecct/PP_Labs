@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<store>
+  <product>
+    <product_id>0</product_id>
+    <name>Iphone</name>
+    <price>999.0</price>
+    <stock>40</stock>
+    <description/>
+    <created_at>2025-11-01T19:37:02.127328</created_at>
+    <type>Smartphone</type>
+    <brand>Apple</brand>
+    <warranty_months>12</warranty_months>
+    <specifications/>
+    <storage>128</storage>
+    <screen_size>6.1</screen_size>
+    <os>IOS</os>
+  </product>
+  <metadata>
+    <total_products>1</total_products>
+    <total_customers>0</total_customers>
+    <export_date>2025-11-01T19:37:29.268598</export_date>
+  </metadata>
+</store>

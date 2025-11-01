@@ -11,6 +11,7 @@ from electronics_store.data_handlers.json_handler import JSONHandler
 from electronics_store.data_handlers.xml_handler import XMLHandler
 
 from dataclasses import dataclass, field
+from typing import List
 import uuid
 from datetime import datetime
 
@@ -43,8 +44,14 @@ class StoreService:
             raise ProductNotFoundError(product_id)
         return self.products[product_id]
 
-    def get_all_products(self):
+    def get_all_products(self) -> List[Smartphone | Laptop]:
         return list(self.products.values())
+
+    def get_all_customers(self) -> List[Customer]:
+        return list(self.customers.values())
+
+    def get_all_orders(self) -> List[Order]:
+        return list(self.orders.values())
 
     def create_customer(self, name: str, email: str, **kwargs):
         customer_id = self.next_customer_id
@@ -72,6 +79,7 @@ class StoreService:
             order_items.append(OrderItem(product, item['quantity']))
             product.decrease_stock(item['quantity'])
 
+        # Order ID Generation
         order = Order(order_id=str(uuid.uuid4()), customer=customer, items=order_items)
         self.orders[order.order_id] = order
         return order
@@ -135,3 +143,19 @@ class StoreService:
             customers_data = [customers_data]
         for customer_data in customers_data:
             self.create_customer(**{k: v for k, v in customer_data.items() if k != 'customer_id'})
+
+    def get_store_stats(self) -> dict:
+        total_products = len(self.products)
+        total_customers = len(self.customers)
+        total_orders = len(self.orders)
+        total_inventory = sum(product.stock for product in self.products.values())
+        total_value = sum(product.price * product.stock for product in self.products.values())
+
+        return {
+            "total_products": total_products,
+            "total_customers": total_customers,
+            "total_orders": total_orders,
+            "total_inventory_value": round(total_value, 2),
+            "total_inventory_units": total_inventory,
+            "low_stock_products": len([p for p in self.products.values() if p.stock <= 5])
+        }
