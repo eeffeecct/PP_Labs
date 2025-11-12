@@ -43,6 +43,19 @@ def find_cards_in_text(text, use_luhn=False):
             valid_cards.append(match)
     return valid_cards
 
+def get_card_type(card_num):
+    cleaned = clean_card_number(card_num)
+    if cleaned.startswith('4'):
+        return 'Visa'
+    elif any(cleaned.startswith(str(i)) for i in range(2221, 2721)) or \
+         any(cleaned.startswith(str(i)) for i in range(51, 56)):
+        return 'Mastercard'
+    elif cleaned.startswith('62'):
+        return 'UnionPay'
+    elif cleaned.startswith('220') and len(cleaned) >= 4 and 2200 <= int(cleaned[:4]) <= 2204:
+        return 'Mir'
+    return 'Unknown'
+
 def main():
     mode = input("input/url/file: ").strip().lower()
     if mode == 'input':
