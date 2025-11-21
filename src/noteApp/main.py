@@ -9,7 +9,6 @@ from PyQt6.QtWidgets import (
     QFormLayout, QDialogButtonBox
 )
 from db_connection import get_db_connection, get_cursor
-from PyQt6.QtGui import QIcon
 from psycopg2 import errors as pg_errors
 import uuid
 
@@ -60,12 +59,6 @@ class NotesApp(QMainWindow):
         self.resize(800, 600)
         self.setMinimumSize(400, 300)
         self.setMaximumSize(1200, 900)
-        self.setWindowIcon(QIcon('src/noteApp/NoteAppIcon.ico'))
-
-        try:
-            self.setWindowIcon(QIcon('src/noteApp/media/NoteAppIcon.ico'))
-        except Exception as e:
-            print(f"Ошибка загрузки иконки: {str(e)}")
 
         # DB connection
         try:
