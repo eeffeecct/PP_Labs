@@ -1,0 +1,46 @@
+Index: src/card_validator/card_validator.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import re\r\nimport requests\r\n\r\n# url tets: https://docs.stripe.com/testing\r\n\r\nCARD_REGEX = re.compile(\r\n    r'^(?:'\r\n    r'4[0-9]{12}(?:[0-9]{3,6})?|'  # Visa: нач с 4, 13-19 \r\n    r'2[2-7][0-9]{14}|5[1-5][0-9]{14}|'  # Mastercard: 2221-2720 или 51-55, 16ч \r\n    r'62[0-9]{14,17}|'  # UnionPay: 16-19ч нач с 62\r\n    r'220[0-4][0-9]{12}'  # Mir: 16ч нач с 2200-2204\r\n    r')$'\r\n)\r\n\r\ndef clean_card_number(card_num):\r\n    return re.sub(r'[- ]', '', card_num)\r\n\r\ndef is_valid_card_syntax(card_num):\r\n    # any cards\r\n    cleaned = clean_card_number(card_num)\r\n    if not cleaned.isdigit():\r\n        return False\r\n    return bool(CARD_REGEX.match(cleaned))\r\n\r\ndef luhn_checksum(card_num):\r\n    # начиная с конца каждую вторую цифру удвоить, если получилось больше 9 то заменить на сумму его цифр\r\n    # сложить все цифры если % 10 == 0 то ок\r\n    cleaned = clean_card_number(card_num)\r\n    if not cleaned.isdigit():\r\n        return False\r\n    digits = [int(d) for d in cleaned]\r\n    for i in range(len(digits) - 2, -1, -2):\r\n        digits[i] *= 2\r\n        if digits[i] > 9:\r\n            digits[i] -= 9\r\n    return sum(digits) % 10 == 0\r\n\r\ndef find_cards_in_text(text, use_luhn=False):\r\n    potential_matches = re.findall(r'\\b(?:\\d{4}[- ]?){3}\\d{1,15}\\b|\\b\\d{13,19}\\b', text)\r\n    valid_cards = []\r\n    for match in potential_matches:\r\n        if is_valid_card_syntax(match) and (not use_luhn or luhn_checksum(match)):\r\n            valid_cards.append(match)\r\n    return valid_cards\r\n\r\ndef get_card_type(card_num):\r\n    cleaned = clean_card_number(card_num)\r\n    if cleaned.startswith('4'):\r\n        return 'Visa'\r\n    elif any(cleaned.startswith(str(i)) for i in range(2221, 2721)) or \\\r\n         any(cleaned.startswith(str(i)) for i in range(51, 56)):\r\n        return 'Mastercard'\r\n    elif cleaned.startswith('62'):\r\n        return 'UnionPay'\r\n    elif cleaned.startswith('220') and len(cleaned) >= 4 and 2200 <= int(cleaned[:4]) <= 2204:\r\n        return 'Mir'\r\n    return 'Unknown'\r\n\r\ndef main():\r\n    mode = input(\"input/url/file: \").strip().lower()\r\n    if mode == 'input':\r\n        card_input = input(\"Enter card number: \").strip()\r\n        if is_valid_card_syntax(card_input):\r\n            print(f\"Valid syntax: {card_input}\")\r\n            if luhn_checksum(card_input):\r\n                print(\"Passes Luhn.\")\r\n            else:\r\n                print(\"Fails Luhn.\")\r\n        else:\r\n            print(\"Invalid syntax.\")\r\n    elif mode == 'url':\r\n        url = input(\"Enter URL: \").strip()\r\n        try:\r\n            response = requests.get(url, timeout=10)\r\n            response.raise_for_status()\r\n            cards = find_cards_in_text(response.text, use_luhn=True)\r\n            print(f\"Found {len(cards)} valid cards: {cards}\")\r\n        except requests.RequestException as e:\r\n            print(f\"Error fetching URL: {e}\")\r\n    elif mode == 'file':\r\n        file_path = input(\"Enter file path: \").strip()\r\n        try:\r\n            with open(file_path, 'r', encoding='utf-8') as f:\r\n                content = f.read()\r\n            cards = find_cards_in_text(content, use_luhn=True)\r\n            print(f\"Found {len(cards)} valid cards: {cards}\")\r\n        except FileNotFoundError:\r\n            print(\"File not found.\")\r\n        except Exception as e:\r\n            print(f\"Error reading file: {e}\")\r\n    else:\r\n        print(\"Invalid mode.\")\r\n\r\nif __name__ == \"__main__\":\r\n    main()
+===================================================================
+diff --git a/src/card_validator/card_validator.py b/src/card_validator/card_validator.py
+--- a/src/card_validator/card_validator.py	(revision 9dd7b24bd4e97a7464acf6cd0daa6a720b6a0f16)
++++ b/src/card_validator/card_validator.py	(date 1763124418051)
+@@ -16,7 +16,6 @@
+     return re.sub(r'[- ]', '', card_num)
+ 
+ def is_valid_card_syntax(card_num):
+-    # any cards
+     cleaned = clean_card_number(card_num)
+     if not cleaned.isdigit():
+         return False
+@@ -72,7 +71,7 @@
+         url = input("Enter URL: ").strip()
+         try:
+             response = requests.get(url, timeout=10)
+-            response.raise_for_status()
++            response.raise_for_status() # искл при 400 500
+             cards = find_cards_in_text(response.text, use_luhn=True)
+             print(f"Found {len(cards)} valid cards: {cards}")
+         except requests.RequestException as e:
+Index: src/card_validator/test_card_validator.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from card_validator import (clean_card_number, is_valid_card_syntax, luhn_checksum, find_cards_in_text, get_card_type)\r\n\r\n\r\ndef test_clean_card_number():\r\n    assert clean_card_number(\"1234 5678-90123456\") == \"1234567890123456\"\r\n    assert clean_card_number(\"1234\") == \"1234\"\r\n\r\n\r\ndef test_is_valid_card_syntax_valid_cases():\r\n    assert is_valid_card_syntax(\"4111 1111 1111 1111\")  # Visa\r\n    assert is_valid_card_syntax(\"5454 5454 5454 5454\")      # Mastercard\r\n    assert is_valid_card_syntax(\"6250 9460 0000 0016\")      # UnionPay\r\n    assert is_valid_card_syntax(\"2200154524587283\")      # Mir\r\n\r\n\r\ndef test_is_valid_card_syntax_invalid_cases():\r\n    assert not is_valid_card_syntax(\"qwert  qwert\")\r\n    assert not is_valid_card_syntax(\"9999999999999999\")\r\n    assert not is_valid_card_syntax(\"1234 5678 9123 4567\")\r\n\r\n\r\ndef test_luhn_checksum_valid_and_invalid():\r\n    valid = \"4166 6766 6766 6746\"  # Visa, passes Luhn\r\n    invalid = \"4539578763621487\"\r\n    assert luhn_checksum(valid)\r\n    assert not luhn_checksum(invalid)\r\n    assert not luhn_checksum(\"abcd\")\r\n\r\n\r\ndef test_find_cards_in_text_without_luhn():\r\n    text = \"Cards: 4111-1111-1111-1111, 1234 5678 9123 4567\"\r\n    result = find_cards_in_text(text)\r\n    assert \"4111-1111-1111-1111\" in result\r\n    assert \"1234 5678 9123 4567\" not in result\r\n\r\n\r\ndef test_find_cards_in_text_with_luhn():\r\n    text = \"Cards: 4917 6100 0000 0000 4539578763621487\"\r\n    result = find_cards_in_text(text, use_luhn=True)\r\n    assert \"4917 6100 0000 0000\" in result\r\n    assert \"4539578763621487\" not in result\r\n\r\n\r\ndef test_get_card_type_all_cases():\r\n    assert get_card_type(\"4111111111111111\") == \"Visa\"\r\n    assert get_card_type(\"2221000000000009\") == \"Mastercard\"\r\n    assert get_card_type(\"5100000000000000\") == \"Mastercard\"\r\n    assert get_card_type(\"6200000000000000\") == \"UnionPay\"\r\n    assert get_card_type(\"2200000000000000\") == \"Mir\"\r\n    assert get_card_type(\"9999999999999999\") == \"Unknown\"\r\n
+===================================================================
+diff --git a/src/card_validator/test_card_validator.py b/src/card_validator/test_card_validator.py
+--- a/src/card_validator/test_card_validator.py	(revision 9dd7b24bd4e97a7464acf6cd0daa6a720b6a0f16)
++++ b/src/card_validator/test_card_validator.py	(date 1763124699768)
+@@ -35,10 +35,11 @@
+ 
+ 
+ def test_find_cards_in_text_with_luhn():
+-    text = "Cards: 4917 6100 0000 0000 4539578763621487"
++    text = "Cards: 4917 6100 0000 0000 4539578763621487 4539578763621487123123123"
+     result = find_cards_in_text(text, use_luhn=True)
+     assert "4917 6100 0000 0000" in result
+     assert "4539578763621487" not in result
++    assert "4539578763621487123123123" not in result
+ 
+ 
+ def test_get_card_type_all_cases():

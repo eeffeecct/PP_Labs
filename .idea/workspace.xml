@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="20c4c3df-f38d-48cc-ac1f-7d7b5b3cfc18" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/noteApp/db_connection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/noteApp/main.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Laba_2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;eeffeecct&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/eeffeecct/PP_Labs.git&quot;,
+    &quot;accountId&quot;: &quot;e653c4f3-c78d-4767-ad81-7125fea28f68&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="35CBOJj67DRjWCnsOmfWAJNBY6P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for src.card_validator.TestCardValidator.TestCardValidator.executor": "Run",
+    "Python tests.Python tests for src.card_validator.TestCardValidator.TestCardValidator.test_clean_card_number.executor": "Run",
+    "Python tests.Python tests for src.card_validator.TestCardValidator.TestCardValidator.test_is_valid_card_syntax.executor": "Run",
+    "Python tests.Python tests for src.card_validator.test_card_validator.test_clean_card_number.executor": "Run",
+    "Python tests.Python tests for src.card_validator.test_card_validator.test_find_cards_in_text_with_luhn.executor": "Run",
+    "Python tests.Python tests for src.card_validator.test_card_validator.test_find_cards_in_text_without_luhn.executor": "Run",
+    "Python tests.Python tests for src.card_validator.test_card_validator.test_get_card_type_all_cases.executor": "Run",
+    "Python tests.Python tests for src.card_validator.test_card_validator.test_is_valid_card_syntax_invalid_cases.executor": "Run",
+    "Python tests.Python tests for src.card_validator.test_card_validator.test_is_valid_card_syntax_valid_cases.executor": "Run",
+    "Python tests.Python tests for src.card_validator.test_card_validator.test_luhn_checksum_valid_and_invalid.executor": "Run",
+    "Python tests.Python tests in TestCardValidator.py.executor": "Run",
+    "Python tests.Python tests in test_card_validator.py.executor": "Run",
+    "Python tests.Unittests in TestCardValidator.py.executor": "Run",
+    "Python.card_validator.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.test_card_validator.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Laba__3",
+    "last_opened_file_path": "C:/Users/timte/PycharmProjects/PP_Labs/src/noteApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\timte\PycharmProjects\PP_Labs\src\noteApp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\timte\PycharmProjects\PP_Labs\src\noteApp" />
+      <recent name="C:\Users\timte\PycharmProjects\PP_Labs\src\noteApp\media" />
+      <recent name="C:\Users\timte\PycharmProjects\PP_Labs\src\card_validator" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PP_Labs" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/electronics_store" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/electronics_store/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PP_Labs" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/noteApp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/noteApp/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for src.card_validator.test_card_validator.test_find_cards_in_text_with_luhn" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PP_Labs" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src.card_validator.test_card_validator.test_find_cards_in_text_with_luhn&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for src.card_validator.test_card_validator.test_find_cards_in_text_without_luhn" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PP_Labs" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src.card_validator.test_card_validator.test_find_cards_in_text_without_luhn&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for src.card_validator.test_card_validator.test_luhn_checksum_valid_and_invalid" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PP_Labs" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src.card_validator.test_card_validator.test_luhn_checksum_valid_and_invalid&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in C:/Users/timte/PycharmProjects/PP_Labs/src/card_validator/TestCardValidator.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
+      <module name="PP_Labs" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/Programs/Python/Python313/python.exe" />
+      <option name="SDK_NAME" value="Python 3.13" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_pattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/src/card_validator/TestCardValidator.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Python tests for src.card_validator.test_card_validator.test_luhn_checksum_valid_and_invalid" />
+        <item itemvalue="Python tests.Python tests for src.card_validator.test_card_validator.test_find_cards_in_text_without_luhn" />
+        <item itemvalue="Python tests.Python tests for src.card_validator.test_card_validator.test_find_cards_in_text_with_luhn" />
+        <item itemvalue="Python.main (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20c4c3df-f38d-48cc-ac1f-7d7b5b3cfc18" name="Changes" comment="" />
+      <created>1762604141787</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762604141787</updated>
+      <workItem from="1762604144016" duration="93000" />
+      <workItem from="1762604246100" duration="2606000" />
+      <workItem from="1762807477748" duration="677000" />
+      <workItem from="1762883300490" duration="4398000" />
+      <workItem from="1762889688942" duration="253000" />
+      <workItem from="1762932641824" duration="1149000" />
+      <workItem from="1762976562353" duration="2082000" />
+      <workItem from="1763118136556" duration="6097000" />
+      <workItem from="1763139547260" duration="2912000" />
+      <workItem from="1763390059156" duration="9291000" />
+      <workItem from="1763404370794" duration="112000" />
+      <workItem from="1763719545685" duration="2993000" />
+    </task>
+    <task id="LOCAL-00001" summary="basic structure">
+      <option name="closed" value="true" />
+      <created>1762887647311</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762887647311</updated>
+    </task>
+    <task id="LOCAL-00002" summary="regex + validation + lunh">
+      <option name="closed" value="true" />
+      <created>1762889735025</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762889735025</updated>
+    </task>
+    <task id="LOCAL-00003" summary="full functional">
+      <option name="closed" value="true" />
+      <created>1762933286508</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762933286508</updated>
+    </task>
+    <task id="LOCAL-00004" summary="some test values">
+      <option name="closed" value="true" />
+      <created>1762933302116</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762933302116</updated>
+    </task>
+    <task id="LOCAL-00005" summary="get_card_type_method added">
+      <option name="closed" value="true" />
+      <created>1762933640128</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762933640128</updated>
+    </task>
+    <task id="LOCAL-00006" summary="unit tests added">
+      <option name="closed" value="true" />
+      <created>1762933793810</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762933793810</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Basic Qt App">
+      <option name="closed" value="true" />
+      <created>1763390794447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763390794447</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Note app realization without DataBase">
+      <option name="closed" value="true" />
+      <created>1763394252200</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763394252200</updated>
+    </task>
+    <task id="LOCAL-00009" summary="db connection methods added">
+      <option name="closed" value="true" />
+      <created>1763397049174</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763397049174</updated>
+    </task>
+    <task id="LOCAL-00010" summary="smth">
+      <option name="closed" value="true" />
+      <created>1763397062501</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1763397062501</updated>
+    </task>
+    <task id="LOCAL-00011" summary="CRUD operations">
+      <option name="closed" value="true" />
+      <created>1763397543629</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1763397543629</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="basic structure" />
+    <MESSAGE value="regex + validation + lunh" />
+    <MESSAGE value="full functional" />
+    <MESSAGE value="some test values" />
+    <MESSAGE value="get_card_type_method added" />
+    <MESSAGE value="unit tests added" />
+    <MESSAGE value="Basic Qt App" />
+    <MESSAGE value="Note app realization without DataBase" />
+    <MESSAGE value="db connection methods added" />
+    <MESSAGE value="smth" />
+    <MESSAGE value="CRUD operations" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD operations" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PP_Labs$card_validator.coverage" NAME="card_validator Coverage Results" MODIFIED="1763124892189" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/card_validator" />
+    <SUITE FILE_PATH="coverage/PP_Labs$Unittests_in_TestCardValidator_py.coverage" NAME="Unittests in TestCardValidator.py Coverage Results" MODIFIED="1762889875299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/PP_Labs$.coverage" NAME=" Coverage Results" MODIFIED="1763124699776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PP_Labs$test_card_validator.coverage" NAME="test_card_validator Coverage Results" MODIFIED="1762885261068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/card_validator" />
+    <SUITE FILE_PATH="coverage/PP_Labs$main.coverage" NAME="main Coverage Results" MODIFIED="1763722544024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/noteApp" />
+  </component>
+</project>
